@@ -17,6 +17,14 @@ if (process.env.STEEMD_URL_SERVER) {
   steem.api.setOptions({ url: process.env.STEEMD_URL });
 }
 
+if (process.env.CHAIN_PREFIX) {
+  steem.config.set('address_prefix', process.env.CHAIN_PREFIX);
+}
+
+if (process.env.CHAIN_ID) {
+  steem.config.set('chain_id', process.env.CHAIN_ID);
+}
+
 http.globalAgent.maxSockets = Infinity;
 https.globalAgent.maxSockets = Infinity;
 const app = express();

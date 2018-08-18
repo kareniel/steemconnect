@@ -2,6 +2,15 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { Layout } from 'antd';
 import Header from './widgets/Header';
+import steem from '@steemit/steem-js';
+
+if (process.env.CHAIN_PREFIX) {
+  steem.config.set('address_prefix', process.env.CHAIN_PREFIX);
+}
+
+if (process.env.CHAIN_ID) {
+  steem.config.set('chain_id', process.env.CHAIN_ID);
+}
 
 export default class App extends PureComponent {
   static propTypes = {

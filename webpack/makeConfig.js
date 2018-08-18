@@ -25,6 +25,8 @@ function makePlugins(options) {
         ENABLE_LOGGER: JSON.stringify(process.env.ENABLE_LOGGER),
         STEEMD_URL: JSON.stringify(process.env.STEEMD_URL || 'https://api.steemit.com'),
         IS_BROWSER: JSON.stringify(true),
+        CHAIN_PREFIX: JSON.stringify(process.env.CHAIN_PREFIX || ''),
+        CHAIN_ID: JSON.stringify(process.env.CHAIN_ID || ''),
       },
     }),
     new LodashModuleReplacementPlugin({ collections: true, paths: true }),
